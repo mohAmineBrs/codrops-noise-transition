@@ -157,14 +157,13 @@ export function Model(props) {
 
             float w = u_width*dt;
 
-            float mask = smoothstep(1. - w,1.,vUv.y + mix(-w/2., 1. - w/2., u_progress));
+            float maskValue = smoothstep(1. - w,1.,vUv.y + mix(-w/2., 1. - w/2., u_progress));
 
-            mask += mask * noise;
+            maskValue += maskValue * noise;
 
-            float final = smoothstep(border,border+0.01,mask);
+            float mask = smoothstep(border,border+0.01,maskValue);
 
-
-            diffuseColor.rgb += mix(u_color1,u_color2,final);
+            diffuseColor.rgb += mix(u_color1,u_color2,mask);
 
 
         `

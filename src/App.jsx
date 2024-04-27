@@ -6,7 +6,7 @@ import Background from "./Background";
 
 import envMap from "./assets/potsdamer_platz_0.256k.hdr?url";
 
-import "./App.css";
+import "./css/base.css";
 
 function App() {
   return (

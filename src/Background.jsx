@@ -33,7 +33,7 @@ function Background() {
         material.current.u_progress = v;
       },
 
-      duration: 1.9,
+      duration: 2,
       ease: easeQuadOut,
     });
   }, [index]);
@@ -46,7 +46,6 @@ function Background() {
   return (
     <mesh onClick={(e) => handleClick(e)} visible={true}>
       <planeGeometry args={[width, height]} />
-      {/* @ts-ignore */}
       <backgroundMaterial
         ref={material}
         key={BackgroundMaterial.key}

@@ -41,9 +41,9 @@ export const BackgroundMaterial = shaderMaterial(
         
         float dist = length(newUv);
 
-        float falloff = 1.8 - dist;
+        float density = 1.8 - dist;
 
-        float noise = cnoise(vec4(newUv*40.*falloff, u_time, 1.));
+        float noise = cnoise(vec4(newUv*40.*density, u_time, 1.));
         float grain = (fract(sin(dot(vUv, vec2(12.9898,78.233)*2000.0)) * 43758.5453));
         
         float facets = noise*2.;
@@ -52,16 +52,14 @@ export const BackgroundMaterial = shaderMaterial(
         n = step(.2,facets)*dots;
         n = 1. - n;
 
-        float radius = 1.4;
-        float outer_progress = clamp(1.1*u_progress, 0., 1.);
-        float inner_progress = clamp(1.1*u_progress - 0.05, 0., 1.);
+        float radius = 1.5;
+        float outerProgress = clamp(1.1*u_progress, 0., 1.);
+        float innerProgress = clamp(1.1*u_progress - 0.05, 0., 1.);
   
-        float inner_circle = 1. - smoothstep((inner_progress-0.4)*radius, inner_progress*radius, dist);
-        float outer_circle = 1. - smoothstep((outer_progress-0.1)*radius, inner_progress*radius, dist);
+        float innerCircle = 1. - smoothstep((innerProgress-0.4)*radius, innerProgress*radius, dist);
+        float outerCircle = 1. - smoothstep((outerProgress-0.1)*radius, innerProgress*radius, dist);
   
-        float displacement = outer_circle-inner_circle;
-
-        float scale = mix(0., n, displacement);
+        float displacement = outerCircle-innerCircle;
         
 
         float grainStrength = 0.3;
