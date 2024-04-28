@@ -17,6 +17,7 @@ const Scene = () => {
           global
           config={{ mass: 2, tension: 300 }}
           snap={{ mass: 3, tension: 200 }}
+          azimuth={[-Math.PI / 4, Math.PI / 4]}
         >
           <Model />
         </PresentationControls>

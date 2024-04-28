@@ -7,7 +7,7 @@ Title: Energy Drink Game Ready Model
 */
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { Color, Vector2 } from "three";
 import { animate } from "framer-motion";
@@ -21,6 +21,10 @@ import { colors } from "./utils";
 
 export function Model(props) {
   const { nodes, materials } = useGLTF(model);
+
+  const {
+    viewport: { width, height },
+  } = useThree();
 
   const modelRef = useRef();
   const [current, setCurrent] = useState(0);
@@ -71,13 +75,6 @@ export function Model(props) {
       });
     }
   };
-
-  useEffect(() => {
-    window.addEventListener("click", handleClick);
-    return () => {
-      window.removeEventListener("click", handleClick);
-    };
-  }, [handleClick]);
 
   useFrame(({ clock }) => {
     const time = clock.getElapsedTime();
@@ -172,24 +169,30 @@ export function Model(props) {
   }, [uniforms]);
 
   return (
-    <group
-      ref={modelRef}
-      rotation={[-Math.PI / 2, 1.7, Math.PI / 2]}
-      position={[0, 0, 5]}
-      {...props}
-      dispose={null}
-    >
-      <group rotation={[-Math.PI / 2, 0, 0]}>
-        <mesh
-          geometry={nodes.LowRes_Can_Alluminium_0.geometry}
-          material={materials.Alluminium}
-        />
-        <mesh
-          geometry={nodes.LowRes_Can_Body_0.geometry}
-          material={materials.Body}
-        />
+    <>
+      <mesh visible={false} onClick={() => handleClick()}>
+        <planeGeometry args={[width, height]} />
+      </mesh>
+
+      <group
+        ref={modelRef}
+        rotation={[-Math.PI / 2, 1.7, Math.PI / 2]}
+        position={[0, 0, 5]}
+        {...props}
+        dispose={null}
+      >
+        <group rotation={[-Math.PI / 2, 0, 0]}>
+          <mesh
+            geometry={nodes.LowRes_Can_Alluminium_0.geometry}
+            material={materials.Alluminium}
+          />
+          <mesh
+            geometry={nodes.LowRes_Can_Body_0.geometry}
+            material={materials.Body}
+          />
+        </group>
       </group>
-    </group>
+    </>
   );
 }
 

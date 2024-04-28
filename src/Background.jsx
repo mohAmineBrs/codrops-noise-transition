@@ -44,7 +44,7 @@ function Background() {
   });
 
   return (
-    <mesh onClick={(e) => handleClick(e)} visible={true}>
+    <mesh onClick={(e) => handleClick(e)}>
       <planeGeometry args={[width, height]} />
       <backgroundMaterial
         ref={material}
