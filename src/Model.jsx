@@ -13,7 +13,7 @@ import { Color, Vector2 } from "three";
 import { animate } from "framer-motion";
 import { easeQuadOut } from "d3-ease";
 
-import model from "./assets/energy-can.glb?url";
+import model from "./assets/models/energy-can.glb?url";
 
 import { noise } from "./Noise";
 import { useStore } from "./store";

@@ -1,8 +1,115 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@font-face {
+  font-family: "Panton";
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/Panton-Trial-Regular.woff") format("woff");
 }
+
+/* ////////////////////////////////////  Global  //////////////////////////////////// */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Panton", sans-serif;
+  font-display: block;
+  font-size: max(0.9rem, 0.9vw);
+
+  color: #f5f5f5;
+  background: #000000;
+}
+
+::selection {
+  background: rgba(110, 107, 205, 0.5);
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+}
+
+/* ////////////////////////////////////  Codrops Frame  //////////////////////////////////// */
+
+.frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 1.5rem;
+  padding-left: max(1.2rem, 40/1440 * 100vw);
+  padding-right: max(1.2rem, 40/1440 * 100vw);
+  z-index: 99;
+  pointer-events: none;
+}
+
+.frame__header {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 53em) {
+  .frame__header {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.frame a {
+  pointer-events: auto;
+  color: currentColor;
+  text-decoration: none;
+}
+
+.frame a:not(.frame__back) {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  display: inline;
+}
+
+.frame a:not(.frame__back)::before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  position: absolute;
+  top: 90%;
+  transition: transform 0.3s;
+  transform-origin: 0% 50%;
+}
+
+.frame a:not(.frame__back):hover::before {
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+}
+
+.frame__title {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.frame__back {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.frame__back svg {
+  fill: currentColor;
+}
+
+/* ////////////////////////////////////  Canvas  //////////////////////////////////// */
 
 .canvas {
   width: 100%;
@@ -11,4 +118,18 @@
   top: 0;
   left: 0;
   background-color: #020202;
+}
+
+.click__anywhere {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  background: none;
+  outline: none;
+  border: none;
+  color: #f5f5f5;
+  font-family: inherit;
+  font-size: inherit;
 }
