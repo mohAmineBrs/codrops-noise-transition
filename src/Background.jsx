@@ -2,11 +2,12 @@ import React, { useRef, useEffect, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { animate } from "framer-motion";
 import { easeQuadOut } from "d3-ease";
+import { Color } from "three";
+
+import { colors } from "./data";
+import { useStore } from "./store";
 
 import { BackgroundMaterial } from "./BackgroundMaterial";
-import { colors } from "./utils";
-import { useStore } from "./store";
-import { Color } from "three";
 
 function Background() {
   const [index, setIndex] = useState(0);

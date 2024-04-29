@@ -19,13 +19,8 @@ html {
   font-family: "Panton", sans-serif;
   font-display: block;
   font-size: max(0.9rem, 0.9vw);
-
   color: #f5f5f5;
   background: #000000;
-}
-
-::selection {
-  background: rgba(110, 107, 205, 0.5);
 }
 
 html,
@@ -117,7 +112,6 @@ body,
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #020202;
 }
 
 .click__anywhere {

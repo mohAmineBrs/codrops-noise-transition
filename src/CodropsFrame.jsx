@@ -11,7 +11,7 @@ const CodropsFrame = () => {
           href="https://tympanus.net/codrops/?p=77050"
           target="_blank"
         >
-          <span className="oh__inner">Read Article</span>
+          <span className="oh__inner">Article</span>
           <svg width="18px" height="18px" viewBox="0 0 24 24">
             <path
               vectorEffect="non-scaling-stroke"

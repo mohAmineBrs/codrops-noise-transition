@@ -9,7 +9,6 @@ export const BackgroundMaterial = shaderMaterial(
     u_progress: 0,
     u_aspect: 0,
     u_color: null,
-    u_pointer: new Vector2(),
   },
   // vertex shader
   /*glsl*/ `
@@ -26,7 +25,6 @@ export const BackgroundMaterial = shaderMaterial(
     uniform float u_progress;
     uniform float u_aspect;
     uniform vec3 u_color;
-    uniform vec2 u_pointer;
 
     varying vec2 vUv;
 
@@ -70,7 +68,6 @@ export const BackgroundMaterial = shaderMaterial(
         gl_FragColor.rgb*=u_color*2.;
 
         #include <colorspace_fragment>
-
 
     }
 

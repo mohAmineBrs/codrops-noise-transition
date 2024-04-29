@@ -13,13 +13,13 @@ import { Color, Vector2 } from "three";
 import { animate } from "framer-motion";
 import { easeQuadOut } from "d3-ease";
 
-import model from "./assets/models/energy-can.glb?url";
-
 import { noise } from "./Noise";
 import { useStore } from "./store";
-import { colors } from "./utils";
+import { colors } from "./data";
 
-export function Model(props) {
+import model from "./assets/models/energy-can.glb?url";
+
+const Model = (props) => {
   const { nodes, materials } = useGLTF(model);
 
   const {
@@ -170,6 +170,7 @@ export function Model(props) {
 
   return (
     <>
+      {/* Plane helper for click event */}
       <mesh visible={false} onClick={() => handleClick()}>
         <planeGeometry args={[width, height]} />
       </mesh>
@@ -194,6 +195,8 @@ export function Model(props) {
       </group>
     </>
   );
-}
+};
 
 useGLTF.preload(model);
+
+export default Model;

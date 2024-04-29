@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Environment, PresentationControls } from "@react-three/drei";
 
-import { Model } from "./Model";
+import Model from "./Model";
 import Background from "./Background";
 
 import envMap from "./assets/envMap/potsdamer_platz_0.256k.hdr?url";
@@ -14,7 +14,6 @@ const Scene = () => {
         <Environment files={envMap} />
         <Background />
         <PresentationControls
-          global
           config={{ mass: 2, tension: 300 }}
           snap={{ mass: 3, tension: 200 }}
           polar={[-Math.PI / 4, Math.PI / 4]}
