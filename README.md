@@ -34,7 +34,7 @@ npm run build
 
 ## Misc
 
-Follow Moh: [Twitter](https://twitter.com/moohdev), [LinkedIn](https://www.linkedin.com/in/moohdev), [GitHub](https://github.com/mohAmineBrs)
+Follow mooh: [Twitter](https://twitter.com/moohdev), [LinkedIn](https://www.linkedin.com/in/moohdev), [GitHub](https://github.com/mohAmineBrs)
 
 Follow Codrops: [Twitter](http://www.twitter.com/codrops), [Facebook](http://www.facebook.com/codrops), [GitHub](https://github.com/codrops), [Instagram](https://www.instagram.com/codropsss/)
 
