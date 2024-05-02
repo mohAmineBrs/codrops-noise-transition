@@ -2,7 +2,7 @@
 
 This WebGL experiment explores two visual effects: a texture transition on a 3D can model and a procedural radial noise field. The model's texture transitions vertically with a noise effect at the seam. In the background, a ring of pulsing noise emanates from the center, extending beyond the screen's edges.
 
-![Image](https://tympanus.net/codrops/wp-content/uploads/2024/04/3dcan.jpg)
+![Image](https://tympanus.net/codrops/wp-content/uploads/2024/05/texturetransition.jpg)
 
 [Article on Codrops](https://tympanus.net/codrops/?p=77050)
 
