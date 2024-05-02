@@ -1,10 +1,12 @@
 # Model Texture Transition And Procedural Radial Noise Using WebGL
 
-This WebGL experiment explores two visual effects: a texture transition on a can 3D model and a procedural radial noise field. The model's texture transitions vertically with a noise effect at the seam. In the background, a ring of pulsing noise emanates from the center, extending beyond the screen's edges.
+This WebGL experiment explores two visual effects: a texture transition on a 3D can model and a procedural radial noise field. The model's texture transitions vertically with a noise effect at the seam. In the background, a ring of pulsing noise emanates from the center, extending beyond the screen's edges.
+
+![Image](https://tympanus.net/codrops/wp-content/uploads/2024/04/3dcan.jpg)
 
 [Article on Codrops](https://tympanus.net/codrops/?p=77050)
 
-[Demo](https://tympanus.net/codrops/?p=77050)
+[Demo](https://tympanus.net/Development/TextureTransition/)
 
 ## Installation
 
@@ -32,7 +34,7 @@ npm run build
 
 ## Misc
 
-Follow Author: [Twitter](https://twitter.com/moohdev), [LinkedIn](https://www.linkedin.com/in/moohdev), [GitHub](https://github.com/mohAmineBrs)
+Follow Moh: [Twitter](https://twitter.com/moohdev), [LinkedIn](https://www.linkedin.com/in/moohdev), [GitHub](https://github.com/mohAmineBrs)
 
 Follow Codrops: [Twitter](http://www.twitter.com/codrops), [Facebook](http://www.facebook.com/codrops), [GitHub](https://github.com/codrops), [Instagram](https://www.instagram.com/codropsss/)
 

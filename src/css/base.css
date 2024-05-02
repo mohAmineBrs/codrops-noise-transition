@@ -66,14 +66,14 @@ body,
   text-decoration: none;
 }
 
-.frame a:not(.frame__back) {
+.frame a {
   white-space: nowrap;
   overflow: hidden;
   position: relative;
   display: inline;
 }
 
-.frame a:not(.frame__back)::before {
+.frame a::before {
   content: "";
   height: 1px;
   width: 100%;
@@ -84,7 +84,7 @@ body,
   transform-origin: 0% 50%;
 }
 
-.frame a:not(.frame__back):hover::before {
+.frame a:hover::before {
   transform: scaleX(0);
   transform-origin: 100% 50%;
 }
